@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>注册</h3>
+<form th:action="@{/register}" th:method="post">
+    <lable for="username" th:text="#{message.username}"></lable>
+    <input id="username" name="username" th:placeholder="#{placeholder.username}" type="text"/>
+
+    <br>
+
+    <lable for="password" th:text="#{message.password}"></lable>
+    <input id="password" name="password" th:placeholder="#{placeholder.password}" type="password"/>
+
+    <br>
+
+    <input type="submit" th:value="#{message.register}"/>
+
+    <p th:if="${msg} != null" style="color: red" th:text="${msg}"></p>
+</form>
+
+</body>
+</html>
